@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Index Page{% endblock title %}
+
+{% block content %}
+
+<h1>Welcome to my website!</h1>
+{% if name %}
+<h2>Hello, {{ name | upper }}</h2>
+{% else %}
+<h2>Hello, stranger!</h2>
+{% endif %}
+
+<h2>Friend List</h2>
+<ul>
+    {% for friend in friends | reverse %}
+    <li>{{ friend }}</li>
+    {% endfor %}
+</ul>
+<h2>Date: {{ date | today }}</h2>
+
+<h3>Frase: {{ repeat('Caca', 5) }}</h3>
+
+{% endblock %}

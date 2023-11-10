@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Register Page{% endblock title %}
+
+{% block content %}
+
+<h1>Register user</h1>
+
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.username.label }} {{ form.username }}
+    {{ form.password.label }} {{ form.password }}
+    {{ form.submit }}
+    <!--<input type="text" placeholder="Username" class="input-form" name="username" required>
+    <input type="password" placeholder="Password" class="input-form" name="password" required>
+    <button type="submit" class="btn-submit">Add user</button>-->
+</form>
+
+{% if error %}
+<h4 class="error">{{ error }}</h4>
+{% endif %}
+
+{% endblock content %}

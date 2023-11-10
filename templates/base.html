@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
+        <title>Flask App - {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Index</a></li>
+                <li><a href="{{ url_for('hello', name = 'Francisco') }}">Hello</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            </ul>
+        </nav>
+
+        {% block content %}
+        {% endblock content %}
+
+        <script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+    </body>
+</html>
+
